@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MeetingtView.swift
 //  Scrumdinger
 //
 //  Created by pitel on 1/16/24.
