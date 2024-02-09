@@ -15,8 +15,8 @@ struct DetailEditView: View {
         Form {
             Section(header: Text("Meeting Info")) {
                 TextField("Title", text: $scrum.title)
-                HStack{
-                    Slider(value: $scrum.lengthInMinutesAsDouble, in: 5...30, step: 1){
+                HStack {
+                    Slider(value: $scrum.lengthInMinutesAsDouble, in: 5...30, step: 1) {
                         Text("Length")
                     }
                     .accessibilityValue("\(scrum.lengthInMinutes) minutes")
@@ -26,15 +26,15 @@ struct DetailEditView: View {
                 }
                 ThemePicker(selection: $scrum.theme)
             }
-            Section(header: Text("Attendees")){
+            Section(header: Text("Attendees")) {
                 ForEach(scrum.attendees) { attendee in
                     Text(attendee.name)
                 }
                 .onDelete { indices in
                     scrum.attendees.remove(atOffsets: indices)
                 }
-                HStack{
-                    TextField("New attendee", text: $newAttendeeName)
+                HStack {
+                    TextField("New Attendee", text: $newAttendeeName)
                     Button(action: {
                         withAnimation {
                             let attendee = DailyScrum.Attendee(name: newAttendeeName)
@@ -52,8 +52,8 @@ struct DetailEditView: View {
     }
 }
 
-struct DetailEditView_previews: PreviewProvider {
-    static var previews: some View{
+struct DetailEditView_Previews: PreviewProvider {
+    static var previews: some View {
         DetailEditView(scrum: .constant(DailyScrum.sampleData[0]))
     }
 }
