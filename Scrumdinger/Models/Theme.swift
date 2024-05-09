@@ -31,16 +31,13 @@ enum Theme: String, CaseIterable, Identifiable {
             case .indigo, .magenta, .navy, .oxblood, .purple: return .white
         }
     }
-    
     var mainColor: Color {
         Color(rawValue)
     }
-    
     var name: String {
         rawValue.capitalized
     }
-    
-    var id: String{
+    var id: String {
         name
     }
 }
